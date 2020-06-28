@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Friendship Calculator</string>
+    <string name="frientship_calculator">Friendship Calculator</string>
+
+    <string name="your_name">Your Name</string>
+    <string name="your_sex">Your Sex</string>
+    <string name="your_dob">Your DOB</string>
+
+    <string name="friend_name">Frient\'s Name</string>
+    <string name="friend_sex">Frient\'s Sex</string>
+    <string name="friend_dob">Frient\'s DOB</string>
+
+    <string name="calculate_button_text">Calculate</string>
+
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
+</resources>
