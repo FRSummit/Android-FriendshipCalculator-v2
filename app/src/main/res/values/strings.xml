@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Friendship Calculator</string>
+    <string name="welcome_text">Welcome To Friendship Calculator</string>
+    <string name="start">Lets Start</string>
     <string name="frientship_calculator">Friendship Calculator</string>
 
     <string name="your_name">Your Name</string>

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class CalculationResult extends Activity {
@@ -18,5 +19,9 @@ public class CalculationResult extends Activity {
 
         calcResult = (TextView) findViewById(R.id.calculation_result_text);
         calcResult.setText("Your friendship result is " + arg + "%");
+    }
+
+    public void aboutDeveloper(View view) {
+
     }
 }

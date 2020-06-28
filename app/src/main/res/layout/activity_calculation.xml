@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:padding="10dp"
+    tools:context=".Calculation">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="1dp">
+
+            <!--Coronavirus: How long does it take to recover?-->
+
+            <RelativeLayout
+                android:id="@+id/frientship_calculation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <!-- Top Section -->
+                <RelativeLayout
+                    android:id="@+id/header_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/friendship_icon"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_centerInParent="true"
+                        android:layout_alignParentTop="true"
+                        android:background="@drawable/friendship_icon"/>
+
+                    <TextView
+                        android:id="@+id/friendship_calculator_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="30sp"
+                        android:layout_marginTop="12dp"
+                        android:textStyle="bold|normal"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:gravity="center"
+                        android:text="@string/frientship_calculator"
+                        android:layout_below="@id/friendship_icon"
+                        android:textColor="@color/colorPrimary"/>
+                </RelativeLayout>
+
+                <!-- Your info Section -->
+                <RelativeLayout
+                    android:id="@+id/your_info_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/header_section">
+
+                    <EditText
+                        android:id="@+id/your_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:textColor="@color/PURPLE"
+                        android:hint="@string/your_name"
+                        android:layout_marginTop="20dp" />
+
+                    <RelativeLayout
+                        android:id="@+id/sex_section"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/your_name">
+
+                        <TextView
+                            android:id="@+id/sex_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:layout_marginTop="12dp"
+                            android:textStyle="normal"
+                            android:textColor="@color/PURPLE"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:gravity="left"
+                            android:text="@string/your_sex"
+                            android:drawableRight="@drawable/sex_icon"/>
+
+                        <Spinner
+                            android:id="@+id/sex_spinner"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_alignParentRight="true"
+                            android:textColor="@color/PURPLE"
+                            android:textSize="20dp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/dob_section"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/sex_section">
+
+                        <TextView
+                            android:id="@+id/dob_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:textColor="@color/PURPLE"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginRight="30dp"
+                            android:textStyle="normal"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:gravity="left"
+                            android:text="@string/your_dob"/>
+
+                        <RelativeLayout
+                            android:id="@+id/dob_date_section"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/dob_text"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/spinner_stroke" >
+
+                            <Spinner
+                                android:id="@+id/date_spinner_day"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="20dp"
+                                android:layout_marginTop="16dp"
+                                android:textColor="@color/PURPLE"
+                                android:textSize="20dp"/>
+
+                            <Spinner
+                                android:id="@+id/date_spinner_month"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="20dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_toRightOf="@id/date_spinner_day"
+                                android:textColor="@color/PURPLE"
+                                android:textSize="20dp"/>
+
+                            <Spinner
+                                android:id="@+id/date_spinner_year"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="20dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_toRightOf="@id/date_spinner_month"
+                                android:textColor="@color/PURPLE"
+                                android:textSize="20dp"/>
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <!-- Friend's info Section -->
+                <RelativeLayout
+                    android:id="@+id/friend_info_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/your_info_section">
+
+                    <EditText
+                        android:id="@+id/your_friend_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:textColor="@color/PURPLE"
+                        android:hint="@string/friend_name"
+                        android:layout_marginTop="20dp" />
+
+                    <RelativeLayout
+                        android:id="@+id/friend_sex_section"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/your_friend_name">
+
+                        <TextView
+                            android:id="@+id/friend_sex_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:textColor="@color/PURPLE"
+                            android:layout_marginTop="12dp"
+                            android:textStyle="normal"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:gravity="left"
+                            android:text="@string/friend_sex"
+                            android:drawableRight="@drawable/sex_icon"/>
+
+                        <Spinner
+                            android:id="@+id/friend_sex_spinner"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_alignParentRight="true"
+                            android:textColor="@color/PURPLE"
+                            android:textSize="20dp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/friend_dob_section"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/friend_sex_section">
+
+                        <TextView
+                            android:id="@+id/friend_dob_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:textColor="@color/PURPLE"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginRight="10dp"
+                            android:textStyle="normal"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:gravity="left"
+                            android:text="@string/friend_dob"/>
+
+                        <RelativeLayout
+                            android:id="@+id/friend_dob_date_section"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/friend_dob_text"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/spinner_stroke" >
+
+                            <Spinner
+                                android:id="@+id/friend_date_spinner_day"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="20dp"
+                                android:layout_marginTop="16dp"
+                                android:textColor="@color/PURPLE"
+                                android:textSize="20dp"/>
+
+                            <Spinner
+                                android:id="@+id/friend_date_spinner_month"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="20dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_toRightOf="@id/friend_date_spinner_day"
+                                android:textColor="@color/PURPLE"
+                                android:textSize="20dp"/>
+
+                            <Spinner
+                                android:id="@+id/friend_date_spinner_year"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="20dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_toRightOf="@id/friend_date_spinner_month"
+                                android:textColor="@color/PURPLE"
+                                android:textSize="20dp"/>
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <!-- Button Section -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/friend_info_section"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center" >
+
+                    <Button
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/calculate_btn_style"
+                        android:drawableLeft="@drawable/friendship_calculation"
+                        android:onClick="calculateBtnClick"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:text="@string/calculate_button_text"
+                        android:textSize="20dp" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

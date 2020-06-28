@@ -8,6 +8,7 @@
     tools:context=".CalculationResult">
 
     <RelativeLayout
+        android:id="@+id/calculation_result_section"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:gravity="center"
@@ -41,6 +42,28 @@
             android:text="Calc"
             android:layout_below="@id/congo_text"
             android:textColor="@color/colorPrimary"/>
+
+    </RelativeLayout>
+
+    <!-- Button Section -->
+    <RelativeLayout
+        android:id="@+id/about_dev_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center" >
+
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/calculate_btn_style"
+            android:drawableLeft="@drawable/friendship_calculation"
+            android:onClick="aboutDeveloper"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/calculate_button_text"
+            android:textSize="20dp" />
 
     </RelativeLayout>
 
