@@ -1,6 +1,7 @@
 package com.frsummit.friendshipcalculator;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -57,7 +58,6 @@ public class MainActivity extends Activity {
     }
 
     public void calculateBtnClick(View view) {
-        System.out.println("Hello There, I am working");
         if(validate()) {
             String name_1 = yourName.getText().toString();
             String name_2 = friendName.getText().toString();
@@ -89,6 +89,10 @@ public class MainActivity extends Activity {
                 totalParcentage = 100;
             }
             System.out.println(nameCalculation + "%" + " " + sexCalculation + "%" + " " + dobCalculation + "%" + " " + totalParcentage + "%");
+
+            Intent intent = new Intent(this, CalculationResult.class);
+            intent.putExtra("result", Integer.toString(totalParcentage));
+            startActivity(intent);
         }
     }
 
