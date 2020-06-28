@@ -15,6 +15,7 @@
     <string name="calculate_button_text">Calculate</string>
 
     <string name="congo">Congratulation</string>
+    <string name="about_dev">Dev</string>
 
     <string-array name="planets_array">
         <item>Mercury</item>

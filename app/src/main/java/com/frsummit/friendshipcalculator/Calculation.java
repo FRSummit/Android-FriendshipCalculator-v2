@@ -88,7 +88,15 @@ public class Calculation extends Activity {
             } else {
                 totalParcentage = 100;
             }
-            System.out.println(nameCalculation + "%" + " " + sexCalculation + "%" + " " + dobCalculation + "%" + " " + totalParcentage + "%");
+//            System.out.println(nameCalculation + "%" + " " + sexCalculation + "%" + " " + dobCalculation + "%" + " " + totalParcentage + "%");
+
+            if(totalParcentage > 9 && totalParcentage < 20) totalParcentage += 51;
+            else if(totalParcentage > 19 && totalParcentage < 30) totalParcentage += 42;
+            else if(totalParcentage > 29 && totalParcentage < 40) totalParcentage += 35;
+            else if(totalParcentage > 39 && totalParcentage < 50) totalParcentage += 31;
+            else if(totalParcentage > 49 && totalParcentage < 60) totalParcentage += 15;
+            else if(totalParcentage > 59 && totalParcentage < 70) totalParcentage += 9;
+            else totalParcentage = totalParcentage;
 
             Intent intent = new Intent(this, CalculationResult.class);
             intent.putExtra("result", Integer.toString(totalParcentage));
