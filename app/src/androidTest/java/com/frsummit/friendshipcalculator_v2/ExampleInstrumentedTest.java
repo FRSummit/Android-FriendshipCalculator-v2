@@ -1,4 +1,4 @@
-package com.frsummit.friendshipcalculator;
+package com.frsummit.friendshipcalculator_v2;
 
 import android.content.Context;
 

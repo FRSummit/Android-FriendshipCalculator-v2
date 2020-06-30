@@ -1,6 +1,4 @@
-package com.frsummit.friendshipcalculator;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.frsummit.friendshipcalculator_v2;
 
 import android.app.Activity;
 import android.content.Intent;
