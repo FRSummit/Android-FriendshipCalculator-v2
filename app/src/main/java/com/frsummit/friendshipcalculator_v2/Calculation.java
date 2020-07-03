@@ -3,17 +3,28 @@ package com.frsummit.friendshipcalculator_v2;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/*import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;*/
+
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Calculation extends Activity {
     List<String> sex = new ArrayList<>();
@@ -28,6 +39,8 @@ public class Calculation extends Activity {
     DOBParcentageByDate dobParcentageByDate = new DOBParcentageByDate();
     CheckDeveloper checkDeveloper = new CheckDeveloper();
     int nameCalculation = 0, sexCalculation = 0, dobCalculation = 0, totalParcentage = 0;
+
+    private InterstitialAd mInterstitialAd; // AdMov
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +68,16 @@ public class Calculation extends Activity {
         createDays();
         createMonths();
         createYears();
+
+        /************************** ADMOV **************************/
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        AdRequest request = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+        mInterstitialAd.loadAd(request);
+        adEvent();
+        /************************** ADMOV **************************/
     }
 
     public void calculateBtnClick(View view) {
@@ -160,4 +183,56 @@ public class Calculation extends Activity {
         yearSpinnerAdapter.setDropDownViewResource(R.layout.spinner_item);
         spinner.setAdapter(yearSpinnerAdapter);
     }
+
+
+
+
+    /************************** ADMOV ************************** ADMOV ************************** ADMOV ************************** ADMOV **************************/
+    /************************** ADMOV ************************** ADMOV ************************** ADMOV ************************** ADMOV **************************/
+
+    public void interBtnClick(View view) {
+        if(mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        } else {
+            Log.d("TAG", "The interstitial wasn't loaded yet.");
+            Toast.makeText(this, "The interstitial wasn't loaded yet.", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void adEvent() {
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                Toast.makeText(getApplicationContext(), "Ad is loaded", Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                Toast.makeText(getApplicationContext(), "Ad failed to load", Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onAdOpened() {
+                Toast.makeText(getApplicationContext(), "Ad is opened", Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onAdClicked() {
+                Toast.makeText(getApplicationContext(), "Ad is clicked", Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onAdLeftApplication() {
+                Toast.makeText(getApplicationContext(), "Ad left application", Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onAdClosed() {
+                Toast.makeText(getApplicationContext(), "Ad is closed", Toast.LENGTH_LONG).show();
+                mInterstitialAd.loadAd(new AdRequest.Builder().build());
+            }
+        });
+    }
+    /************************** ADMOV ************************** ADMOV ************************** ADMOV ************************** ADMOV **************************/
+    /************************** ADMOV ************************** ADMOV ************************** ADMOV ************************** ADMOV **************************/
 }

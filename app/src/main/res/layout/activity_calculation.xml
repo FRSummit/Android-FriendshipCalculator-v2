@@ -55,6 +55,7 @@
                         android:gravity="center"
                         android:text="@string/frientship_calculator"
                         android:layout_below="@id/friendship_icon"
+                        android:onClick="interBtnClick"
                         android:textColor="@color/colorPrimary"/>
                 </RelativeLayout>
 
