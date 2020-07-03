@@ -71,7 +71,8 @@ public class Calculation extends Activity {
 
         /************************** ADMOV **************************/
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+//        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); // test unit id
+        mInterstitialAd.setAdUnitId("ca-app-pub-4861848901455235/7087818880"); // Real unit id
         AdRequest request = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();

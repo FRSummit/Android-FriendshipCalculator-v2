@@ -48,7 +48,8 @@ public class CalculationResult extends Activity {
     }
 
     public void loadAd() {
-        this.rewardedAd = new RewardedAd(this, "ca-app-pub-3940256099942544/5224354917");
+//        this.rewardedAd = new RewardedAd(this, "ca-app-pub-3940256099942544/5224354917"); // test unit id
+        this.rewardedAd = new RewardedAd(this, "ca-app-pub-4861848901455235/7467092839"); // Real unit id
         RewardedAdLoadCallback callback = new RewardedAdLoadCallback(){
             @Override
             public void onRewardedAdFailedToLoad(int i) {
